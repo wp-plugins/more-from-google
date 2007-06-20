@@ -2,7 +2,7 @@
 Contributors: tompahoward
 Donate link: http://windyroad.org/software/wordpress/more-from-google-plugin/#donate
 Tags: search, google, revenue, Windy Road
-Requires at least: 2.1
+Requires at least: 2.0
 Tested up to: 2.2
 Stable tag: 0.0.1
 
@@ -123,6 +123,8 @@ None yet.
 Got any questions?
 
 == Release Notes ==
+* 0.0.2
+	* Added support for old WordPress 2.0 installations
 * 0.0.1
 	* Better handing of middle clicks.
 	* Added [BeNice](http://wordpress.org/extend/plugins/be-nice/ ) support.

@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: More From Google
-Version: 0.0.1
+Version: 0.0.2
 Plugin URI: http://windyroad.org/software/wordpress/more-from-google-plugin
 Description: Adds related Google search results to your posts
 Author: Windy Road
@@ -121,7 +121,18 @@ function mfg_get_append_to_content() {
  *************************************************************************/
 
 
-
+// attribute_escape() was only introduced in wp 2.1 
+if( function_exists('attribute_escape')) {
+	function mfg_attribute_escape($text) {
+		return attribute_escape($text);
+	}
+}
+else {
+	function mfg_attribute_escape($text) {
+		$safe_text = wp_specialchars($text, true);
+		return apply_filters('attribute_escape', $safe_text, $text);
+	}
+}
 
 define('MFG_DOMAIN', 'MoreFromGoogle');
 $mfg_is_setup = FALSE;
@@ -173,7 +184,7 @@ function mfg_get_search_term() {
 // output textarea in the post for adding search terms
 function mfg_add_term_input() {
 	global $post;
-	$searchterm = attribute_escape( stripslashes(get_post_meta($post->ID, 'mfg_searchterm', true)) );	
+	$searchterm = mfg_attribute_escape( stripslashes(get_post_meta($post->ID, 'mfg_searchterm', true)) );	
 	?><fieldset><legend><?php
 	_e('Google Search Term:', MFG_DOMAIN);
 	?></legend><?php
