@@ -4,7 +4,7 @@ Donate link: http://windyroad.org/software/wordpress/more-from-google-plugin/#do
 Tags: search, google, revenue, Windy Road
 Requires at least: 2.0
 Tested up to: 2.2
-Stable tag: 0.0.1
+Stable tag: 0.0.2
 
 Easily embed Google search results within your WordPress site, with the More from Google plugin.
 
