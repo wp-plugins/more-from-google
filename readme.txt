@@ -88,8 +88,8 @@ The More from Google link at the bottom of each post call a Javascript function 
 	to
 
 		<?php endif; ?>
-		<?php if( function_exists( 'mfg_search_inputs' ) ) {
-			mfg_search_inputs();
+		<?php if( function_exists( 'mfg_show_results' ) ) {
+			mfg_show_results();
 		}?>	
 		</div>
 		
